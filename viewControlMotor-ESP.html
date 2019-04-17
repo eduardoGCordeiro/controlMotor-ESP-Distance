@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motor Controller</title>
+</head>
+<body>
+
+       <link rel="stylesheet" href="styleControlMotor-ESP.css">
+       <script type="text/javascript" src="scriptControlMotor.js"></script>
+
+        <div id="main">
+
+            <div id="main-head-motor">
+                <h4>MOTOR - ESP</h4>
+            </div>
+
+            <div id = "main-div-controller-motor">
+                <div id = "tittle-main-motor-div">
+                    <h1>Motor Controller</h1>
+                </div>
+
+                <div id = "div-form-controller-motor">
+                    <form id="form-move" method="post" action="controlMotor-ESP.php" onsubmit="return false">
+                        <table id="table-controller-motor">
+                            <thead id="table-head-controller-motor">
+                            </thead>
+
+                            <tbody id="table-body-controller-motor">
+                                <tr class=table-body-tr-inputs-configure-motor">
+                                    <td class="table-body-td-configure-motor">
+                                        <legend>Move to distance</legend>
+                                        <input class="table-body-input-configure-motor" id="table-body-step-input-controller-motor" type="range" min="0" max="300" name="step" onchange="exibeNumeroStep(this.value)">
+                                    </td>
+                                    <td class="span-configure-motor">
+                                        <span id="number-movedistance-configure-motor"></span>
+                                    </td>
+                                </tr>
+                                <tr class="table-body-tr-inputs-configure-motor">
+                                    <td class="table-body-td-configure-motor">
+                                        <legend>Move to angle</legend>
+                                        <input class="table-body-input-configure-motor" id="table-body-angle-input-controller-motor" type="range" min="0" max="360" name="angle" onchange="exibeNumeroAngle(this.value)">
+                                    </td>
+                                    <td class="span-configure-motor">
+                                        <span id="number-moveangle-configure-motor"></span>
+                                    </td>
+                                </tr>
+
+                                <tr class="table-body-tr-button-motor">
+                                    <td  id="table-body-td-reset-controller-motor">
+                                        <button id="table-body-reset-botton-controller-motor" type="submit" name="reset" name="move" value="reset" onclick="sendData(this)">Move to origin</button>
+                                    </td>
+
+                                    <td id="table-body-tr-calibrate-motor">
+                                        <button id="table-body-calibrate-botton-controller-motor" type="submit" name="reset" name="move" value="calibrate" onclick="sendData(this)">Calibrate</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+            <div id="main-footer-motor">
+                <h5>&copy; Eduardo Cordeiro - UEPG</h5>
+            </div>
+
+        </div>
+
+</body>
+</html>
